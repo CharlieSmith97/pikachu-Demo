@@ -33,7 +33,7 @@
       //每次当展示代码的时候 就向下拉到最底层!
       container.scrollTop = container.scrollHeight;
       if (n < code.length) {
-        id = setTimeout(run(), duration);
+        id = setTimeout(run, duration);
       } else {
         //如果fn传入的话 那么就调用对应的回调函数!
         fn && fn.call();
