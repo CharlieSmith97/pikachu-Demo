@@ -1,19 +1,44 @@
 !function() {
+  var duration = 50;
+
+  $(".actions").on("click", "button", function(e) {
+    let $button = $(e.currentTarget);
+    let speed = $button.attr("data-speed");
+    $button
+      .addClass("active")
+      .siblings(".active")
+      .removeClass("active");
+    switch (speed) {
+      case "slow":
+        duration = 100;
+        break;
+      case "normal":
+        duration = 50;
+        break;
+      case "fast":
+        duration = 15;
+        break;
+    }
+  });
+
   function writeCode(prefix, code, fn) {
     let container = document.querySelector("#code");
     let styleTag = document.querySelector("#styleTag");
     let n = 0;
-    let id = setInterval(() => {
+    let id;
+    id = setTimeout(function run() {
       n += 1;
       container.innerHTML = code.substring(0, n);
       styleTag.innerHTML = code.substring(0, n);
+      //每次当展示代码的时候 就向下拉到最底层!
       container.scrollTop = container.scrollHeight;
-      if (n >= code.length) {
-        window.clearInterval(id);
+      if (n < code.length) {
+        id = setTimeout(run(), duration);
+      } else {
         //如果fn传入的话 那么就调用对应的回调函数!
         fn && fn.call();
       }
-    }, 10);
+    }, duration);
   }
   let code = `
   /*
