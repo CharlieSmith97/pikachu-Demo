@@ -9,127 +9,47 @@
 *::before {
   box-sizing: border-box;
 }
+
 body {
-  height: 100vh;
-  border: 1px solid green;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffe600;
-}
-.wrapper {
-  width: 100%;
-  height: 165px;
-  position: relative;
-}
-.nose {
-  border-radius: 11px;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 12px;
-  border-color: black transparent transparent transparent;
-  position: absolute;
-  left: 50%;
-  top: 28px;
-  margin-left: -12px;
-}
-.eye {
-  width: 49px;
-  height: 49px;
-  background: #2e2e2e;
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid #000000;
-}
-.eye::after {
-  content: "";
-  display: block;
-  width: 24px;
-  height: 24px;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  left: 6px;
-  border: 1px solid black;
-}
-.eye.left {
-  right: 50%;
-  margin-right: 99px;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.eye.right {
-  left: 50%;
-  margin-left: 99px;
+.code-wrapper {
+  flex: 1;
+  height: 50%;
 }
-.face {
-  width: 68px;
-  height: 68px;
-  background: red;
-  border-radius: 50%;
-  border: 2px solid black;
-  position: absolute;
-  top: 85px;
+
+.preview-wrapper {
+  flex: 1;
+  height: 50%;
+  padding: 10px;
 }
-.face.left {
-  right: 50%;
-  margin-right: 116px;
-}
-.face.right {
-  left: 50%;
-  margin-left: 116px;
-}
-.UpperLip {
-  height: 20px;
-  width: 80px;
-  border: 3px solid black;
-  position: absolute;
-  top: 50px;
-  background: #ffe600;
-}
-.UpperLip.left {
-  border-bottom-left-radius: 50px 25px;
-  border-top: none;
-  border-right: none;
-  right: 50%;
-  transform: rotate(-15deg);
-}
-.UpperLip.right {
-  border-bottom-right-radius: 50px 25px;
-  border-top: none;
-  border-left: none;
-  left: 50%;
-  transform: rotate(15deg);
-}
-.LowerLip-wrapper {
-  left: 50%;
-  position: absolute;
-  margin-left: -150px;
-  bottom: 0;
-  z-index: -1;
-  position: absolute;
-  height: 110px;
-  width: 300px;
+
+#code {
   overflow: hidden;
+  height: 100%;
 }
-.LowerLip {
-  width: 300px;
-  height: 3500px;
-  background: #9b000a;
-  border: 2px solid black;
-  border-radius: 200px/2000px;
+.actions{
   position: absolute;
-  bottom: 0;
-  overflow: hidden;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
 }
-.LowerLip::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  height: 100px;
-  width: 100px;
-  background: #ff485f;
-  border-radius: 50px;
-  left: 50%;
-  margin-left: -50px;
+
+.actions > button{
+  margin: 10px;
+  background: #ddd;
+  padding:8px 10px;
+  border:none;
+}
+/* 如果是默认激活状态的话 就将颜色变深一点! */
+.actions>button.active{
+  box-shadow: 1px 1px 1px rgb(0,0,0.8);
+}
+
+.actions>button:focus{
+  outline:none;
 }

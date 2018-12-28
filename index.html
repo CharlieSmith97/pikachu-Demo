@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -7,22 +7,41 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
-    <title>JS Bin</title>
+    <title>一只皮卡丘!</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style id="styleTag"></style>
   </head>
 
   <body>
-    <div class="wrapper">
-      <div class="nose"></div>
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-      <div class="face left"></div>
-      <div class="face right"></div>
-      <div class="UpperLip left"></div>
-      <div class="UpperLip right"></div>
-      <div class="LowerLip-wrapper">
-          <div class="LowerLip"></div>
+    <!-- 代码展示部分! -->
+    <div class="code-wrapper">
+        <pre id="code"></pre>
     </div>
+
+    <!-- 效果预览 -->
+    <div class="preview-wrapper">
+      <div class="preview">
+        <div class="wrapper">
+            <!-- 代码执行顺序  后面的代码会覆盖掉前面代码的效果! -->
+            <div class="LowerLip-wrapper">
+              <div class="LowerLip"></div>
+            </div>
+            <div class="nose"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="UpperLip left"></div>
+            <div class="UpperLip right"></div>
+        </div>
+      </div>
     </div>
+    <div class="actions">
+      <button data-speed="slow">慢速</button>
+      <!-- 默认是中速! -->
+      <button data-speed="normal" class="active">中速</button>
+      <button data-speed="fast">快速</button>
+    </div>  
+    <script src="js/main.js"></script>
   </body>
 </html>
