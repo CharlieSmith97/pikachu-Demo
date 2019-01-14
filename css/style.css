@@ -44,6 +44,8 @@ body {
   background: #ddd;
   padding:8px 10px;
   border:none;
+  background: #00b7ff73;
+  border-radius: 10px;
 }
 /* 如果是默认激活状态的话 就将颜色变深一点! */
 .actions>button.active{
