@@ -28,8 +28,9 @@
     let id;
     id = setTimeout(function run() {
       n += 1;
-      container.innerHTML = code.substring(0, n);
-      styleTag.innerHTML = code.substring(0, n);
+      // 引入Prism代码高亮插件!
+      container.innerHTML=Prism.highlight(prefix+code.substring(0,n),Prism.languages.css);
+      styleTag.innerHTML =prefix+ code.substring(0, n);
       //每次当展示代码的时候 就向下拉到最底层!
       container.scrollTop = container.scrollHeight;
       if (n < code.length) {
