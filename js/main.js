@@ -69,10 +69,7 @@
     height: 0px;
     border-style: solid;
     border-width: 12px;
-    border-color: black 
-    transparent 
-    transparent 
-    transparent;
+    border-color: black transparent transparent;
     position: absolute;
     left: 50%;
     top: 28px;
